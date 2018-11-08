@@ -1,0 +1,33 @@
+{
+  "name": "picture-this",
+  "version": "1.0.0",
+  "description": "A photo-uploading automation script",
+  "main": "./main.js",
+  "scripts": {
+    "build": "npm run build:types && npm run build:src",
+    "build:src": "npx tsc -p .",
+    "build:types": "npx ttw deploy",
+    "start": "node main.js",
+    "script:install": "node built/scripts/install.js",
+    "script:mkJsonExample": "node built/scripts/mkJsonExample.js",
+    "postinstall": "npm run build && npm run script:install"
+  },
+  "author": "Evan Higgins",
+  "repository": "github:evdhiggins/picture-this",
+  "license": "MIT",
+  "dependencies": {
+    "airtable": "^0.5.7",
+    "dotenv": "^6.1.0",
+    "image-downloader": "^3.4.1",
+    "lodash": "^4.17.11",
+    "nightmare": "^3.0.1",
+    "nightmare-upload": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.118",
+    "@types/nightmare": "^2.10.4",
+    "@types/node": "^10.12.3",
+    "typescript": "^3.1.6",
+    "typescript-type-writer": "github:evdhiggins/typescript-type-writer"
+  }
+}
