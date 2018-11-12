@@ -1,9 +1,9 @@
-import scripts from './pt/index';
-const { getImage, getItem, getUrls, login, uploadImage, downloadImage, loadConfig } = scripts;
+import scripts from "./pt/index";
+const { deleteImage, getImage, getItem, getUrls, login, uploadImage, downloadImage, loadConfig } = scripts;
 
-import nightmare from './initializers/nightmare';
+import nightmare from "./initializers/nightmare";
 
-import { Item } from './types';
+import { Item } from "./types";
 
 const main = async (): Promise<void> => {
   const config = loadConfig();
@@ -14,7 +14,7 @@ const main = async (): Promise<void> => {
     const pageItems: Item[] = pageUrls.map(
       (url: string): Item => {
         return { url, _pageConfig: i };
-      },
+      }
     );
     items.push(...pageItems);
   }
@@ -30,6 +30,7 @@ const main = async (): Promise<void> => {
 
   for (let i in items) {
     await uploadImage(nightmare, items[i], config.upload);
+    deleteImage(items[i]);
   }
 
   await nightmare.end();

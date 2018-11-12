@@ -97,14 +97,14 @@ If `CONFIRM` mode is chosen, the Airtable credentials will need to point to an A
 
 | Column name | Column type      | Required (Y/N) |
 | ----------- | ---------------- | :------------: |
-| ISBN        | Single line text |       Y        |
-| Title       | Single line text |       Y        |
-| Author      | Single line text |       Y        |
-| Picture     | Attachment       |       Y        |
-| Approved    | Checkbox         |       Y        |
-| Edit URL    | URL              |       Y        |
-| Item URL    | URL              |       Y        |
-| Date added  | Created time     |       N        |
+| ISBN        | Single line text | Y              |
+| Title       | Single line text | Y              |
+| Author      | Single line text | Y              |
+| Picture     | Attachment       | Y              |
+| Approved    | Checkbox         | Y              |
+| Edit URL    | URL              | Y              |
+| Item URL    | URL              | Y              |
+| Date added  | Created time     | N              |
 
 Create an Airtable table with the above configuration (it must be an _exact_ match) and add the Airtable api key, base id, and table id to the .env configuration file.
 
@@ -438,6 +438,5 @@ For full examples in both JSON and Javascript please visit the [examples directo
 - Add `overrideFunction` config functions where applicable
 - Fix 3rd party library typing integrations
 - Add unit tests
-- Clear locally downloaded files after upload
 - Add `itemSchema` configuration and remove book-specific verbiage
 - Improve error handling & increase Nightmare error tolerance

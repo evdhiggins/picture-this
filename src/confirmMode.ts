@@ -1,8 +1,9 @@
-import scripts from './pt/index';
+import scripts from "./pt/index";
 
 const {
   addItemsToAirtable,
   deleteAirtableRow,
+  deleteImage,
   downloadImage,
   getImage,
   getItem,
@@ -11,12 +12,12 @@ const {
   getUrls,
   loadConfig,
   login,
-  uploadImage,
+  uploadImage
 } = scripts;
 
-import nightmare from './initializers/nightmare';
+import nightmare from "./initializers/nightmare";
 
-import { Item, IPage } from './types';
+import { Item, IPage } from "./types";
 
 const main = async (): Promise<void> => {
   const config = loadConfig();
@@ -28,7 +29,7 @@ const main = async (): Promise<void> => {
     const pageItems: Item[] = pageUrls.map(
       (url: string): Item => {
         return { url, _pageConfig: i };
-      },
+      }
     );
     items.push(...pageItems);
   }
@@ -58,6 +59,7 @@ const main = async (): Promise<void> => {
     item.picture = await downloadImage(item);
     await uploadImage(nightmare, item, config.upload);
     await deleteAirtableRow(item);
+    deleteImage(itemsToUpload[i]);
   }
 
   await nightmare.end();
