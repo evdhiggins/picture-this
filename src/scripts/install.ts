@@ -50,7 +50,7 @@ AIRTABLE_TABLE_ID=
 MISC_DISPLAY_WINDOW=
 `;
 
-const dotenvPath: PathLike = resolve(__dirname, "../.env");
+const dotenvPath: PathLike = resolve(__dirname, "../../.env");
 
 if (!existsSync(dotenvPath)) {
   console.log(`Creating .env configuration file (@ ${dotenvPath})`);
