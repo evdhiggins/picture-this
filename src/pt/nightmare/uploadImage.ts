@@ -1,7 +1,7 @@
 import { Item, IUpload } from "../../types";
 
 /**
- * Navigate through the item's maintanance page, uploading the downloaded picture
+ * Navigate through the item's maintenance page, uploading the downloaded picture
  * @param nightmare
  * @param item
  * @param uploadConfig

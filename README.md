@@ -151,7 +151,7 @@ exports.loginConfig = {};
 exports.uploadConfig = {};
 ```
 
-While a Javascript configuration file offers more powerful possibilities, all script that is executed in the Nightmare.js browser will be parsed as JOSN, so any data that is not JSON-compatible will be lost (e.g. functions).
+While a Javascript configuration file offers more powerful possibilities, all script that is executed in the Nightmare.js browser will be parsed as JSON, so any data that is not JSON-compatible will be lost (e.g. functions).
 
 WIP: "If you would like to entirely overwrite the function executed in the browser you can supply a `browserFunction` property within the `pageConfig` and `uploadConfig` config objects that will be called instead of the default function."
 
@@ -159,7 +159,7 @@ WIP: "If you, for whatever reason, basically want to rewrite parts of this appli
 
 ### Selectors
 
-Many of the configuration objects use **_selectors_** interfaces, which can contain 1 - 3 properties:
+Many of the configuration objects use **_selector_** interfaces, which can contain 1 - 3 properties:
 
 - **`pattern`**: A CSS selector string used to locate the corresponding item field element.
 - **`prop`**: The HTML element property from which text is obtained. The element found by the `pattern` string is queried for the presence of this property:
